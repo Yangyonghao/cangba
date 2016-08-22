@@ -1,3 +1,4 @@
 .idea/workspace.xml
-runtime/*
+runtime/Cache
 application/Common/Conf/config.php
+Runtime/

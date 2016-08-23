@@ -1,10 +1,38 @@
-<!DOCTYPE html>
-<html>
-<head lang="en">
-    <meta charset="UTF-8">
-    <title></title>
-</head>
-<body>
-
-</body>
-</html>
+<include file="Public::header"/>
+<include file="Public::left_nav" />
+<div class="col-md-10">
+    <table class="table table-bordered">
+        <div class="col-md-12" style="height: 30px;padding: 0">
+            <div class="col-md-6 pull-left">
+                <span>管理员管理</span>
+            </div>
+            <div class="col-md-6 ">
+                <a class="pull-right" style="font-size: 16px;" href="{:U('Admin/userAdd')}">添加管理员</a>
+            </div>
+        </div>
+        <thead>
+            <tr>
+                <th>用户名</th>
+                <th>登陆ip</th>
+                <th>创建时间</th>
+                <th>角色</th>
+                <th>操作</th>
+            </tr>
+        </thead>
+        <tbody>
+            <foreach name="admin_user" item="vo">
+                <tr>
+                    <td>{$vo.user_name}</td>
+                    <td>{$vo.last_login_ip}</td>
+                    <td>{$vo.create_time}</td>
+                    <td>{$vo.role_id}</td>
+                    <td>
+                        <button type="button" class="btn btn-primary">修改</button>
+                        <button type="button" class="btn btn-danger">删除</button>
+                    </td>
+                </tr>
+            </foreach>
+        </tbody>
+    </table>
+</div>
+<include file="Public::footer" />

@@ -16,4 +16,11 @@ class AdminController extends Controller {
         $this->display();
     }
 
+    public function userAdd(){
+        if(IS_AJAX){
+
+        }else{
+            $this->display();
+        }
+    }
 }

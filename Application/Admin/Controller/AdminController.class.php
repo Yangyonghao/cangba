@@ -23,4 +23,14 @@ class AdminController extends Controller {
             $this->display();
         }
     }
+
+
+    /**
+     * @function 获取当前日期
+     * @date:2016-9-2
+     **/
+    public function getServerDate(){
+        return date("Y-m-d H:i:s");
+    }
+
 }

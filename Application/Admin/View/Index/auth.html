@@ -1,0 +1,44 @@
+<include file="Public::header"/>
+<include file="Public::left_nav" />
+<div class="col-md-10">
+    <table class="table table-bordered">
+        <div class="col-md-12" style="height: 30px;padding: 0">
+            <div class="col-md-6 pull-left">
+                <span>权限管理</span>
+            </div>
+            <div class="col-md-6 ">
+                <a class="pull-right" style="font-size: 16px;" href="{:U('Index/authAdd')}">添加权限</a>
+            </div>
+        </div>
+        <thead>
+        <tr>
+            <th>编号</th>
+            <th>权限名称</th>
+            <th>权限路径</th>
+            <th>权限级别</th>
+            <th>状态</th>
+            <th>创建时间</th>
+            <th>父级ID</th>
+            <th>操作</th>
+        </tr>
+        </thead>
+        <tbody>
+        <foreach name="auth_list" item="vo">
+            <tr>
+                <td>{$vo.id}</td>
+                <td>{$vo.module_name}</td>
+                <td>{$vo.module_url}</td>
+                <td>{$vo.level}</td>
+                <td>{$vo.status}</td>
+                <td>{$vo.add_time}</td>
+                <td>{$vo.pid}</td>
+                <td>
+                    <button type="button" class="btn btn-primary">修改</button>
+                    <button type="button" class="btn btn-danger">删除</button>
+                </td>
+            </tr>
+        </foreach>
+        </tbody>
+    </table>
+</div>
+<include file="Public::footer" />

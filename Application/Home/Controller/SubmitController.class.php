@@ -60,7 +60,8 @@ class SubmitController extends Controller {
                     'phone'=>$phone,
                     'pwd'=>md5($pwd),
                     'add_time'=>$this->getSeverTime(),
-                    'login_times'=>1
+                    'login_times'=>1,
+                    'ip_address'=>get_client_ip()
                 ];
                 $msg=M('user')->add($data);
                 if($msg){

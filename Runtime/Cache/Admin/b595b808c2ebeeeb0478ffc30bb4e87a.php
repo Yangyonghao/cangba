@@ -126,7 +126,9 @@
                     <span class="pull-right glyphicon glyphicon-chevron-down"></span>
                 </a>
                 <ul id="systemSetting" class="nav nav-list collapse secondmenu" style="height: 0px;">
-                    <li><a href="#"><i class="glyphicon glyphicon-user"></i><span>用户管理</span></a></li>
+                    <li><a href="<?php echo U('Admin/Index');?>"><i class="glyphicon glyphicon-user"></i><span>用户管理</span></a></li>
+                    <li><a href="<?php echo U('Index/auth');?>"><i class="glyphicon glyphicon-th-list"></i><span>权限管理</span></a></li>
+                    <li><a href="<?php echo U('Index/role');?>"><i class="glyphicon glyphicon-th-list"></i><span>角色管理</span></a></li>
                     <li><a href="#"><i class="glyphicon glyphicon-th-list"></i><span>菜单管理</span></a></li>
                     <li><a href="#"><i class="glyphicon glyphicon-asterisk"></i><span>角色管理</span></a></li>
                     <li><a href="#"><i class="glyphicon glyphicon-edit"></i><span>修改密码</span></a></li>
@@ -152,6 +154,12 @@
                 <a href="./charts.html">
                     <i class="glyphicon glyphicon-calendar"></i>
                     图表统计
+                </a>
+            </li>
+            <li>
+                <a href="<?php echo U('article/add');?>">
+                    <i class="glyphicon glyphicon-calendar"></i>
+                    文章管理
                 </a>
             </li>
             <li>

@@ -1,0 +1,49 @@
+<include file="Public::header"/>
+<include file="Public::left_nav" />
+<div class="col-md-10">
+    <ol class="breadcrumb">
+        <li><a href="{:U('Index/auth')}">权限列表</a></li>
+        <li><a href="#">添加权限</a></li>
+    </ol>
+    <div class="col-md-6">
+        <form method="post" role="form" action="/admin/Article/add">
+            <div class="form-group">
+                <label for="art_title">标题</label>
+                <input type="text" class="form-control" name="art_title" id="art_title" placeholder="请输入标题">
+            </div>
+            <div class="form-group">
+                <label for="article_type">文章类型</label>
+                <select name="article_type" id="article_type">
+                      <option value="1">会员活动</option>
+                      <option value="2">会员公告</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="auth_level">权限级别</label>
+                <input type="text" class="form-control" name="auth_level" id="auth_level" placeholder="请输入名称">
+            </div>
+            <div class="form-group">
+                <label for="pid">父级ID</label>
+                <input type="text" class="form-control" name="pid" id="pid" placeholder="请输入名称">
+            </div>
+            <!-- 加载编辑器的容器 -->
+            <textarea name="content" id="content"> </textarea>
+            <!-- 实例化编辑器 -->
+            <script type="text/javascript" charset="utf-8">
+                window.UEDITOR_HOME_URL = "__PUBLIC__/ueditor/";  //UEDITOR_HOME_URL、config、all这三个顺序不能改变
+                window.onload=function(){
+                    window.UEDITOR_CONFIG.initialFrameHeight=300;//编辑器的高度
+                    window.UEDITOR_CONFIG.imageUrl="{:U('admin/Article/upload')}";          //图片上传提交地址
+                    window.UEDITOR_CONFIG.imagePath= __PUBLIC__+'/Uploads/upload/';//编辑器调用图片的地址
+                    UE.getEditor('content');//里面的contents是我的textarea的id值
+
+                }
+            </script>
+            <button type="submit" class="btn btn-default">提交</button>
+        </form>
+    </div>
+</div>
+<script>
+    var ue = UE.getEditor('content', {initialFrameHeight: 400, initialFrameWidth: 650, elementPathEnabled: false});
+</script>
+<include file="Public::footer" />

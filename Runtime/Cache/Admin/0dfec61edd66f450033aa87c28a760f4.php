@@ -58,7 +58,7 @@
                 dataType:'json',
                 success: function (data) {
                     if(data.status==100){
-//                        alert(data.msg);
+                        alert(data.msg);
                         window.location="/Admin/Index/index";
                     }else{
                         alert(data.msg);

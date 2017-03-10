@@ -58,9 +58,9 @@ class IndexController extends AdminController {
             ];
             $ok_msg=$this->module_model->add($data);
             if($ok_msg){
-                $this->success('添加成功!','/Index/auth');
+                $this->success('添加成功!','/Admin/Index/auth');
             }else{
-                $this->error('添加失败!','/Index/auth');
+                $this->error('添加失败!','/Admin/Index/auth');
             }
         }else{
             $this->display();

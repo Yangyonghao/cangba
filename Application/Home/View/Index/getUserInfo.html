@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="application/javascript" src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
+    <script type="application/javascript" src="__PUBLIC__/js/bootstrap.min.js"></script>
+</head>
+<body>
+    <span>搜索</span>
+    <input type="text" id="key" value="" >
+    <div style="border: 1px solid red;width: 200px;height: 38px;" id="show">
+        <ul>
+            <li>张三</li>
+        </ul>
+    </div>
+</body>
+<script>
+   $("#key").on('keyup',function () {
+       var $this=$(this);
+       var val=$this.val();
+       $.ajax({
+           url:'/home/index/getUserInfo',
+           data:{real_name:val},
+           type:'post',
+           dataType:'json',
+           success:function (data) {
+               var show=$("#show");
+               var html="";
+                for(var i=0;i<data.length;i++){
+                    html+="<li>"+data[i]+"</li>"
+                }
+                $("ul").html(html)
+
+           }
+
+       })
+   })
+</script>
+</html>
